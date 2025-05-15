@@ -3,7 +3,7 @@
 Installation:
 
 ```commandline
-pip install filedialogs
+pip install --upgrade filedialogs
 ```
 
 Test:

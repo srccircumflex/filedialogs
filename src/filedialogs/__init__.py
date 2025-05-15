@@ -66,7 +66,7 @@ def asksave(
 ):
     return _starter_(
         mode="save",
-        multiple=...,
+        multiple=False,
         confirm_overwrite=...,
         initial_dir=initial_dir,
         initial_file=initial_file,
