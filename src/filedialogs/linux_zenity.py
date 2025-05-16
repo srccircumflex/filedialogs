@@ -3,6 +3,9 @@ from pathlib import Path
 from typing import Literal, Iterable
 
 
+_which_proc: str  # set by __init__.py
+
+
 def starter(
         mode: Literal["open", "save", "dir", "folder"] = "open",
         multiple: bool = False,
@@ -12,7 +15,7 @@ def starter(
         file_filter_opts: str | Iterable[str] = None,
         title: str = None,
 ):
-    cmd = ["zenity", "--file-selection"]
+    cmd = [_which_proc, "--file-selection"]
 
     match mode:
         case "open":

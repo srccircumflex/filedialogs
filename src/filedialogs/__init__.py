@@ -6,11 +6,15 @@ from typing import Iterable, Callable, Literal
 STARTERID: Literal["zenity", "kdialog", "tkinter", "windows", "mac"]
 
 if sys.platform == "linux":
-    if shutil.which("zenity"):
-        from .linux_zenity import starter as _starter
+    if __which_proc := shutil.which("zenity"):
+        from . import linux_zenity
+        linux_zenity._which_proc = __which_proc
+        _starter = linux_zenity.starter
         STARTERID = "zenity"
-    elif shutil.which("kdialog"):
-        from .linux_kdialog import starter as _starter
+    elif __which_proc := shutil.which("kdialog"):
+        from . import linux_kdialog
+        linux_kdialog._which_proc = __which_proc
+        _starter = linux_kdialog.starter
         STARTERID = "kdialog"
     else:
         from .tkinter import starter as _starter
