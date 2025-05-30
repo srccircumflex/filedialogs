@@ -21,7 +21,7 @@ dependencies = [
     "pywin32; platform_system == 'Windows'",
 ]
 
-version = "0.4"
+version = "0.4.2"
 
 [project.scripts]
 askfile = "filedialogs.__main__:run"
