@@ -32,7 +32,7 @@ def askfile(
         file_filter_opts: str | Iterable[str] | dict = None,
         title: str = None,
         _starter_: Callable = _starter,
-):
+) -> None | Path:
     return _starter_(
         mode="open",
         multiple=False,
@@ -49,7 +49,7 @@ def askfiles(
         file_filter_opts: str | Iterable[str] | dict = None,
         title: str = None,
         _starter_: Callable = _starter,
-):
+) -> None | list[Path]:
     return _starter_(
         mode="open",
         multiple=True,
@@ -67,7 +67,7 @@ def asksave(
         file_filter_opts: str | Iterable[str] | dict = None,
         title: str = None,
         _starter_: Callable = _starter,
-):
+) -> None | Path:
     return _starter_(
         mode="save",
         multiple=False,
@@ -82,7 +82,7 @@ def asksave(
 def askdir(
         title: str = None,
         _starter_: Callable = _starter,
-):
+) -> None | Path:
     return _starter_(
         mode="dir",
         title=title
